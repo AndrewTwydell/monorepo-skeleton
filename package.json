@@ -1,0 +1,22 @@
+{
+    "name": "monorepo",
+    "version": "1.0.0",
+    "private": false,
+    "workspaces": [
+        "packages/*",
+        "apps/*"
+    ],
+    "scripts": {
+        "build": "env-cmd -f .env turbo run build",
+        "start": "env-cmd -f .env turbo run start --no-cache --parallel --continue",
+        "lint": "eslint --ignore-pattern apps packages --fix && turbo run lint",
+        "format": "prettier --config packages/scripts/.prettierrc --ignore-path packages/scripts/.prettierignore --write . !packages !apps && turbo run format",
+        "test": "turbo run test",
+        "clean": "turbo run clean && rimraf node_modules"
+    },
+    "devDependencies": {
+        "env-cmd": "^10.1.0",
+        "turbo": "^1.1.5",
+        "typescript": "^4.6.2"
+    }
+}

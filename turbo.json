@@ -1,0 +1,46 @@
+{
+    "pipeline": {
+        "build": {
+            "outputs": ["dist/**", "build/**"],
+            "dependsOn": ["^build"]
+        },
+        "server#build": {
+            "dependsOn": ["^build", "logger#build"]
+        },
+        "client#build": {
+            "dependsOn": ["logger#build"]
+        },
+        "server#test": {
+            "dependsOn": ["logger#build", "server#build"]
+        },
+        "client#test": {
+            "dependsOn": ["logger#build"]
+        },
+        "test": {
+            "outputs": [],
+            "dependsOn": ["build"]
+        },
+        "lint": {
+            "dependsOn": ["^build"],
+            "outputs": ["^build"]
+        },
+        "server#lint": {
+            "dependsOn": ["logger#build"]
+        },
+        "start": {
+            "cache": false
+        },
+        "server#start": {
+            "dependsOn": ["^build", "server#build"]
+        },
+        "client#start": {
+            "dependsOn": ["^build", "logger#build"]
+        },
+        "format": {
+            "cache": true
+        },
+        "clean": {
+            "cache": false
+        }
+    }
+}

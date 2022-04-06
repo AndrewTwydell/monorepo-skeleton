@@ -1,0 +1,31 @@
+{
+    "name": "scripts",
+    "version": "0.0.0",
+    "license": "MIT",
+    "main": "index.js",
+    "private": true,
+    "files": [
+        "eslint-preset.js"
+    ],
+    "scripts": {
+        "clean": "rimraf .turbo && rimraf node_modules"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.14.0",
+        "@typescript-eslint/parser": "^5.15.0",
+        "@babel/eslint-parser": "^7.17.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-react-app": "^7.0.0",
+        "eslint-plugin-flowtype": "^8.0.3",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-jsx-a11y": "^6.5.1",
+        "eslint-plugin-react": "^7.29.3",
+        "eslint-plugin-react-hooks": "^4.3.0",
+        "eslint": "^8.10.0"
+    },
+    "devDependencies": {
+        "@types/prettier": "^2.4.4",
+        "prettier": "^2.6.0",
+        "typescript": "^4.6.2"
+    }
+}

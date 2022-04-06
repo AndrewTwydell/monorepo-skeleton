@@ -1,0 +1,25 @@
+{
+    "name": "logger",
+    "version": "0.0.0",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "source": "./src/index.ts",
+    "private": true,
+    "files": [
+        "dist/**"
+    ],
+    "scripts": {
+        "test": "echo TESTING LOGGER",
+        "dev": "tsc -w",
+        "build": "tsc",
+        "lint": "eslint src --fix",
+        "format": "prettier --config ../../packages/scripts/.prettierrc --ignore-path ../../packages/scripts/.prettierignore --write .",
+        "clean": "rimraf .turbo && rimraf dist && rimraf node_modules"
+    },
+    "devDependencies": {
+        "scripts": "*",
+        "eslint": "^8.10.0",
+        "tsconfig": "*",
+        "typescript": "^4.6.2"
+    }
+}
